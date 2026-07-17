@@ -76,7 +76,7 @@ export default function Home() {
     <div className="flex flex-col gap-25 md:gap-36.25 items-center">
       <div
         id="home"
-        className="w-full sm:min-h-224.75 max-h-full bg-[linear-gradient(180deg,#C7F2B1_0%,var(--Pastel-Green,#E6FEDA)_100%)] flex justify-center pb-[3rem]"
+        className="w-full sm:min-h-224.75 max-h-full bg-[linear-gradient(180deg,#C7F2B1_0%,var(--Pastel-Green,#E6FEDA)_100%)] flex justify-center pb-12"
       >
         <div className="flex sm:justify-between flex-col xl:flex-row w-310 max-w-[90lvw] pt-[max(20lvw,14lvh)] md:pt-50">
           {/* left */}
