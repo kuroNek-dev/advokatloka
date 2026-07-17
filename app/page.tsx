@@ -1,65 +1,247 @@
+"use client";
+
 import Image from "next/image";
+import Header from "./Component/Header";
+import InfoCard from "./Component/InfoCard";
+import MockupView from "./Component/MockupView";
+import Form from "./Component/Form";
+import { useState } from "react";
+import Footer from "./Component/Footer";
 
 export default function Home() {
+  let data = [
+    {
+      title: "title",
+      desc: "Lorem ipsum dolor sit amet consectetur. Aliquet feugiat dignissim ut nisl enim in id enim sem. Sed volutpat quisque at nascetur tellus aliquet ac.",
+    },
+    {
+      title: "title",
+      desc: "Lorem ipsum dolor sit amet consectetur. Aliquet feugiat dignissim ut nisl enim in id enim sem. Sed volutpat quisque at nascetur tellus aliquet ac.",
+    },
+    {
+      title: "title",
+      desc: "Lorem ipsum dolor sit amet consectetur. Aliquet feugiat dignissim ut nisl enim in id enim sem. Sed volutpat quisque at nascetur tellus aliquet ac.",
+    },
+    {
+      title: "title",
+      desc: "Lorem ipsum dolor sit amet consectetur. Aliquet feugiat dignissim ut nisl enim in id enim sem. Sed volutpat quisque at nascetur tellus aliquet ac.",
+    },
+    {
+      title: "title",
+      desc: "Lorem ipsum dolor sit amet consectetur. Aliquet feugiat dignissim ut nisl enim in id enim sem. Sed volutpat quisque at nascetur tellus aliquet ac.",
+    },
+    {
+      title: "title",
+      desc: "Lorem ipsum dolor sit amet consectetur. Aliquet feugiat dignissim ut nisl enim in id enim sem. Sed volutpat quisque at nascetur tellus aliquet ac.",
+    },
+    {
+      title: "title",
+      desc: "Lorem ipsum dolor sit amet consectetur. Aliquet feugiat dignissim ut nisl enim in id enim sem. Sed volutpat quisque at nascetur tellus aliquet ac.",
+    },
+    {
+      title: "title",
+      desc: "Lorem ipsum dolor sit amet consectetur. Aliquet feugiat dignissim ut nisl enim in id enim sem. Sed volutpat quisque at nascetur tellus aliquet ac.",
+    },
+    {
+      title: "title",
+      desc: "Lorem ipsum dolor sit amet consectetur. Aliquet feugiat dignissim ut nisl enim in id enim sem. Sed volutpat quisque at nascetur tellus aliquet ac.",
+    },
+    {
+      title: "title",
+      desc: "Lorem ipsum dolor sit amet consectetur. Aliquet feugiat dignissim ut nisl enim in id enim sem. Sed volutpat quisque at nascetur tellus aliquet ac.",
+    },
+    {
+      title: "title",
+      desc: "Lorem ipsum dolor sit amet consectetur. Aliquet feugiat dignissim ut nisl enim in id enim sem. Sed volutpat quisque at nascetur tellus aliquet ac.",
+    },
+    {
+      title: "title",
+      desc: "Lorem ipsum dolor sit amet consectetur. Aliquet feugiat dignissim ut nisl enim in id enim sem. Sed volutpat quisque at nascetur tellus aliquet ac.",
+    },
+    {
+      title: "title",
+      desc: "Lorem ipsum dolor sit amet consectetur. Aliquet feugiat dignissim ut nisl enim in id enim sem. Sed volutpat quisque at nascetur tellus aliquet ac.",
+    },
+    {
+      title: "title",
+      desc: "Lorem ipsum dolor sit amet consectetur. Aliquet feugiat dignissim ut nisl enim in id enim sem. Sed volutpat quisque at nascetur tellus aliquet ac.",
+    },
+  ];
+
+  const [name, setName] = useState<string>("");
+  const [email, setEmail] = useState<string>("");
+  const [message, setMessage] = useState<string>("");
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+    <div className="flex flex-col gap-25 md:gap-36.25 items-center">
+      <div
+        id="home"
+        className="w-full sm:min-h-224.75 max-h-full bg-[linear-gradient(180deg,#C7F2B1_0%,var(--Pastel-Green,#E6FEDA)_100%)] flex justify-center pb-[3rem]"
+      >
+        <div className="flex sm:justify-between flex-col xl:flex-row w-310 max-w-[90lvw] pt-[max(20lvw,14lvh)] md:pt-50">
+          {/* left */}
+          <div className="flex flex-col gap-6 md:gap-8 items-center xl:items-start">
+            {/* pre-title */}
+            <div className="flex gap-1.5 md:gap-2.5 p-[0.75rem_1.5rem] bg-dark-green items-center rounded-full animate-[fadeIn_0.7s_cubic-bezier(0.26,0.23,0.2,1)]">
+              <Image
+                width={20}
+                height={20}
+                alt="logo"
+                src={"/Icon/book.svg"}
+                blurDataURL="/Icon/book.svg"
+              />
+              <p className="text-white text-[min(4lvw,1.125rem)] md:text-[1.125rem] font-semibold tracking-m4">
+                Konsultan Hukum No. 1
+              </p>
+            </div>
+            <div className="flex flex-col items-center xl:items-start">
+              <h1 className="text-[min(8lvw,3.25rem)] md:text-[3.25rem] text-dark-green font-bold tracking-m8 animate-[fadeIn_0.7s_cubic-bezier(0.26,0.23,0.2,1)_forwards] [animation-delay:300ms] opacity-0">
+                Semua Urusan Hukum
+              </h1>
+              <h1 className="text-[min(10lvw,5.125rem)] md:text-[5.125rem] text-dark-green font-bold tracking-m8 mt-[-0.8rem] xl:mt-[-1.2rem] animate-[fadeIn_0.7s_cubic-bezier(0.26,0.23,0.2,1)_forwards] [animation-delay:600ms] opacity-0">
+                Dalam Satu <span className="text-orange">Layar</span>
+              </h1>
+            </div>
+            <p className="text-center xl:text-left text-[min(5lvw,2rem)] md:text-[2rem] tracking-m2 font-normal leading-[140%] animate-[fadeIn_0.7s_cubic-bezier(0.26,0.23,0.2,1)_forwards] [animation-delay:900ms] opacity-0">
+              Bukan sekadar aplikasi, Sebuah ekosistem keadilan dalam satu
+              genggaman.
+            </p>
+            {/* download button */}
+            <div className="flex gap-4 max-w-[70lvw]">
+              {/* playstore */}
+              <div className="cursor-pointer animate-[fadeIn_0.7s_cubic-bezier(0.26,0.23,0.2,1)_forwards] [animation-delay:1200ms] opacity-0">
+                <Image
+                  alt="playstore download"
+                  src={"/Element/playstore-button.svg"}
+                  blurDataURL="/Element/playstore-button.svg"
+                  placeholder="blur"
+                  width={200}
+                  height={200}
+                />
+              </div>
+              {/* appstore */}
+              <div className="cursor-pointer animate-[fadeIn_0.7s_cubic-bezier(0.26,0.23,0.2,1)_forwards] [animation-delay:1350ms] opacity-0">
+                <Image
+                  alt="appstore download"
+                  src={"/Element/appstore-button.svg"}
+                  blurDataURL="/Element/appstore-button.svg"
+                  placeholder="blur"
+                  width={200}
+                  height={200}
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* phone image */}
+          <div className="relative w-full xl:w-136 aspect-34/36 mt-[20lvw] sm:mt-0 scale-110 sm:scale-90 xl:scale-80 sm:top-0 xl:-top-12 animate-[fadeIn_1s_cubic-bezier(0.26,0.23,0.2,1)_forwards] [animation-delay:450ms] opacity-0">
             <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
+              src={"/Image/hero-phone.png"}
+              alt="advokatloka-demo-screen"
+              fill
+              sizes="34rem"
+              className="object-contain"
+              loading="eager"
             />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+          </div>
         </div>
-      </main>
+      </div>
+
+      {/* cardlist */}
+      <div className="flex flex-col gap-3 w-310 max-w-[90lvw] items-center mt-[min(6lvw,5rem)] sm:-mt-20 xl:-mt-60">
+        <div className="flex max-w-[90lvw] flex-col md:flex-row gap-3 justify-center">
+          <InfoCard icon="/Icon/logo.png" title="title" desc="Description" />
+          <InfoCard icon="/Icon/logo.png" title="title" desc="Description" />
+        </div>
+        <div className="flex max-w-[90lvw] flex-col md:flex-row gap-3 justify-center">
+          <InfoCard icon="/Icon/logo.png" title="title" desc="Description" />
+          <InfoCard icon="/Icon/logo.png" title="title" desc="Description" />
+        </div>
+      </div>
+
+      {/* feature */}
+      <div className="flex flex-col gap-[9.06rem] w-310 max-w-[90lvw]">
+        {data.map((val, i) => {
+          return (
+            <MockupView
+              image={`/Image/Mockup/phone_mockup_${i + 1}.png`}
+              title={val.title}
+              type={i % 2 == 0 ? 0 : 1}
+              desc={val.desc}
+              key={i}
+            />
+          );
+        })}
+      </div>
+
+      <div className="w-full">
+        {/* form */}
+        <div
+          id="contact"
+          className="bg-pastel-green w-full p-[4rem_6.25rem] flex justify-center"
+        >
+          <div className="w-310 max-w-[90lvw] gap-12 md:gap-4 lg:gap-16 flex md:flex-row flex-col px-4 md:px-0 lg:px-28">
+            {/* left */}
+            <div className="flex flex-col gap-4 md:gap-9 w-full">
+              <h1 className="text-[min(8lvw,3rem)] md:text-[2.5rem] xl:text-[3rem] text-dark-green font-bold tracking-m8">
+                Contact
+              </h1>
+              <div>
+                <h2 className="text-[min(4lvw,1rem)] md:text-[1rem] xl:text-[1.375rem] text-dark-green font-normal tracking-m4">
+                  Feedback, questions, ideas, or issues
+                </h2>
+                <h1 className="text-[min(5.5lvw,1.3rem)] md:text-[1.3rem] xl:text-[2rem] text-dark-green font-bold tracking-m4">
+                  Ask Everything!
+                </h1>
+              </div>
+            </div>
+
+            {/* form input */}
+            <div className="flex flex-col gap-4 md:gap-8">
+              <Form
+                title="Name"
+                func={(e) => {
+                  setName(e);
+                }}
+                placeholder="Your Name"
+                value={name}
+              ></Form>
+              <Form
+                title="Email"
+                func={(e) => {
+                  setEmail(e);
+                }}
+                placeholder="yourmail@mail.com"
+                value={email}
+              ></Form>
+              <Form
+                title="Name"
+                func={(e) => {
+                  setMessage(e);
+                }}
+                placeholder="Your Message Right Here..."
+                area
+                value={message}
+              ></Form>
+              <button
+                onClick={() => {
+                  if (!email || !name || !message) {
+                    alert("Please input the form input first to continue!");
+                    return;
+                  }
+                }}
+                className="bg-dark-green text-white text-[1.25rem] font-bold p-3 rounded-xl hover:brightness-75 cursor-pointer duration-300"
+              >
+                Send it!
+              </button>
+            </div>
+          </div>
+        </div>
+
+        {/* Footer */}
+        <Footer></Footer>
+      </div>
+      <Header></Header>
     </div>
   );
 }
