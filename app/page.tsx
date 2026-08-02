@@ -267,14 +267,22 @@ export default function Home() {
           <div className="w-310 max-w-[90lvw] flex flex-col gap-12 md:px-40 lg:px-30 py-4 items-center">
             <h1
               className="text-[min(8lvw,3.25rem)] md:text-[3.25rem] text-dark-green font-bold tracking-m8 text-center
-            animate-[fadeInBoth_0.7s_cubic-bezier(0.26,0.23,0.2,1)_both] [animation-timeline:view()] [animation-range:entry_80%_cover_100%] opacity-0"
+            animate-[fadeInBoth_0.7s_cubic-bezier(0.26,0.23,0.2,1)_both] opacity-0"
+              style={{
+                animationRange: "entry_80%_cover_100%",
+                animationTimeline: "view()",
+              }}
             >
               Telah Diliput Oleh
             </h1>
             {/* parent container */}
             <div
               className="w-full md:w-[140%] overflow-hidden relative
-            animate-[fadeInBoth_0.7s_cubic-bezier(0.26,0.23,0.2,1)_both] [animation-timeline:view()] [animation-range:entry_80%_cover_100%] opacity-0"
+            animate-[fadeInBoth_0.7s_cubic-bezier(0.26,0.23,0.2,1)_both] opacity-0"
+              style={{
+                animationRange: "entry_80%_cover_100%",
+                animationTimeline: "view()",
+              }}
             >
               <div className="w-max overflow-hidden">
                 {/* loop container */}
@@ -307,14 +315,22 @@ export default function Home() {
           <div className="w-310 max-w-[90lvw] flex flex-col gap-12 md:px-40 lg:px-30 py-4 items-center">
             <h1
               className="text-[min(8lvw,3.25rem)] md:text-[3.25rem] text-dark-green font-bold tracking-m8 text-center
-            animate-[fadeInBoth_0.7s_cubic-bezier(0.26,0.23,0.2,1)_both] [animation-timeline:view()] [animation-range:entry_80%_cover_100%] opacity-0"
+            animate-[fadeInBoth_0.7s_cubic-bezier(0.26,0.23,0.2,1)_both] opacity-0"
+              style={{
+                animationRange: "entry_80%_cover_100%",
+                animationTimeline: "view()",
+              }}
             >
               Penghargaan yang Diraih
             </h1>
             {/* parent container */}
             <div
               className="w-full md:w-[140%] overflow-hidden relative
-            animate-[fadeInBoth_0.7s_cubic-bezier(0.26,0.23,0.2,1)_both] [animation-timeline:view()] [animation-range:entry_80%_cover_100%] opacity-0"
+            animate-[fadeInBoth_0.7s_cubic-bezier(0.26,0.23,0.2,1)_both] opacity-0"
+              style={{
+                animationRange: "entry_80%_cover_100%",
+                animationTimeline: "view()",
+              }}
             >
               <div className="w-max overflow-hidden">
                 {/* loop container */}
