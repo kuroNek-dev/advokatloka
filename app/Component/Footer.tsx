@@ -15,6 +15,7 @@ const Footer = () => {
               src={"/Icon/logo.png"}
               blurDataURL="/Icon/logo.png"
               placeholder="blur"
+              className="select-none"
             />
           </div>
           <p className="text-dark-green text-[min(8lvw,2rem)] sm:text-[2rem] font-semibold select-none translate-y-[10%]">

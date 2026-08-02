@@ -67,6 +67,29 @@ export default function Home() {
       desc: "Lorem ipsum dolor sit amet consectetur. Aliquet feugiat dignissim ut nisl enim in id enim sem. Sed volutpat quisque at nascetur tellus aliquet ac.",
     },
   ];
+  let diliput = [
+    {
+      image: "1.png",
+    },
+    {
+      image: "2.png",
+    },
+    {
+      image: "3.png",
+    },
+    {
+      image: "4.png",
+    },
+    {
+      image: "5.png",
+    },
+    {
+      image: "6.png",
+    },
+    {
+      image: "7.png",
+    },
+  ];
 
   const [name, setName] = useState<string>("");
   const [email, setEmail] = useState<string>("");
@@ -234,6 +257,90 @@ export default function Home() {
               >
                 Send it!
               </button>
+            </div>
+          </div>
+        </div>
+
+        {/* logo slider */}
+        <div className="w-full items-center flex flex-col gap-20 md:gap-30 py-20">
+          {/* diliput */}
+          <div className="w-310 max-w-[90lvw] flex flex-col gap-12 md:px-40 lg:px-30 py-4 items-center">
+            <h1
+              className="text-[min(8lvw,3.25rem)] md:text-[3.25rem] text-dark-green font-bold tracking-m8 text-center
+            animate-[fadeInBoth_0.7s_cubic-bezier(0.26,0.23,0.2,1)_both] [animation-timeline:view()] [animation-range:entry_80%_cover_100%] opacity-0"
+            >
+              Telah Diliput Oleh
+            </h1>
+            {/* parent container */}
+            <div
+              className="w-full md:w-[140%] overflow-hidden relative
+            animate-[fadeInBoth_0.7s_cubic-bezier(0.26,0.23,0.2,1)_both] [animation-timeline:view()] [animation-range:entry_80%_cover_100%] opacity-0"
+            >
+              <div className="w-max overflow-hidden">
+                {/* loop container */}
+                <div className="flex gap-8 h-10 md:h-16 animate-[infiniteLoop_15s_linear_infinite]">
+                  {Array.from({ length: diliput.length * 2 }).map((_, i) => {
+                    return (
+                      <div className="h-full relative shrink-0" key={i}>
+                        <img
+                          src={`/Diliput/${diliput[i % diliput.length].image}`}
+                          alt={diliput[i % diliput.length].image.replaceAll(
+                            ".png",
+                            "",
+                          )}
+                          className="h-full w-auto"
+                        ></img>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+              {/* overlay */}
+              <div
+                className="w-full h-16 absolute
+                bg-[linear-gradient(to_right,#f5f5f5_0%,transparent_15%,transparent_85%,#f5f5f5_100%)]
+                bottom-0"
+              ></div>
+            </div>
+          </div>
+          {/* penghargaan */}
+          <div className="w-310 max-w-[90lvw] flex flex-col gap-12 md:px-40 lg:px-30 py-4 items-center">
+            <h1
+              className="text-[min(8lvw,3.25rem)] md:text-[3.25rem] text-dark-green font-bold tracking-m8 text-center
+            animate-[fadeInBoth_0.7s_cubic-bezier(0.26,0.23,0.2,1)_both] [animation-timeline:view()] [animation-range:entry_80%_cover_100%] opacity-0"
+            >
+              Penghargaan yang Diraih
+            </h1>
+            {/* parent container */}
+            <div
+              className="w-full md:w-[140%] overflow-hidden relative
+            animate-[fadeInBoth_0.7s_cubic-bezier(0.26,0.23,0.2,1)_both] [animation-timeline:view()] [animation-range:entry_80%_cover_100%] opacity-0"
+            >
+              <div className="w-max overflow-hidden">
+                {/* loop container */}
+                <div className="flex gap-8 h-10 md:h-16 animate-[infiniteLoopReverse_15s_linear_infinite]">
+                  {Array.from({ length: diliput.length * 2 }).map((_, i) => {
+                    return (
+                      <div className="h-full relative shrink-0" key={i}>
+                        <img
+                          src={`/Diliput/${diliput[i % diliput.length].image}`}
+                          alt={diliput[i % diliput.length].image.replaceAll(
+                            ".png",
+                            "",
+                          )}
+                          className="h-full w-auto"
+                        ></img>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+              {/* overlay */}
+              <div
+                className="w-full h-16 absolute
+                bg-[linear-gradient(to_right,#f5f5f5_0%,transparent_15%,transparent_85%,#f5f5f5_100%)]
+                bottom-0"
+              ></div>
             </div>
           </div>
         </div>
