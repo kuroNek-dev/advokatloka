@@ -1,21 +1,21 @@
 @import "tailwindcss";
 
 :root {
-  --background: #F5F5F5;
-  --foreground: #1D1D1D;
+  --background: #f5f5f5;
+  --foreground: #1d1d1d;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --color-pastel-green: #E6FEDA;
+  --color-pastel-green: #e6feda;
   --color-dark-green: #103927;
-  --color-orange: #FFB43D;
-  --color-tech-white: #F5F5F5;
-  --color-text: #1D1D1D;
-  --tracking-m8 : -8%;
-  --tracking-m4 : -4%;
-  --tracking-m2 : -2%;
+  --color-orange: #ffb43d;
+  --color-tech-white: #f5f5f5;
+  --color-text: #1d1d1d;
+  --tracking-m8: -8%;
+  --tracking-m4: -4%;
+  --tracking-m2: -2%;
 }
 
 body {
@@ -24,7 +24,7 @@ body {
 }
 
 ::-webkit-scrollbar {
-  display:none
+  display: none;
 }
 
 html {
@@ -39,55 +39,57 @@ html {
 
 @keyframes fadeIn {
   from {
-    transform:translateY(4rem);
-    opacity:0;
-  } to {
+    transform: translateY(4rem);
+    opacity: 0;
+  }
+  to {
     transform: translateY(0);
-    opacity:1;
+    opacity: 1;
   }
 }
 
 @keyframes fadeInBoth {
   30% {
-    transform:translateY(4rem);
-    opacity:0;
+    transform: translateY(4rem);
+    opacity: 0;
   }
   50% {
     transform: translateY(0);
-    opacity:1;
+    opacity: 1;
   }
   90% {
-    transform:translateY(0) scale(0.9);
-    opacity:0;
+    transform: translateY(0) scale(0.9);
+    opacity: 0;
   }
 }
 
 @keyframes popIn {
   0% {
-    opacity:0;
-    transform:scale(0.7)
-  }
-  
-  30%{
-    opacity:1;
-    transform:scale(1)
+    opacity: 0;
+    transform: scale(0.7);
   }
 
-  70%{
-    opacity:1;
-    transform:scale(1)
+  30% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  70% {
+    opacity: 1;
+    transform: scale(1);
   }
 
   100% {
-    opacity:0;
-    transform:scale(0.7)
+    opacity: 0;
+    transform: scale(0.7);
   }
 }
 
 @keyframes infiniteLoop {
   from {
     transform: translateX(0);
-  } to {
+  }
+  to {
     transform: translateX(calc(-50% - 1rem));
   }
 }
@@ -95,7 +97,8 @@ html {
 @keyframes infiniteLoopReverse {
   from {
     transform: translateX(calc(-50% - 1rem));
-  } to {
+  }
+  to {
     transform: translateX(0);
   }
 }
