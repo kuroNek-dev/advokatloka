@@ -1,12 +1,13 @@
 "use client";
 
 import Image from "next/image";
+import { useState } from "react";
+import Carousel from "./Component/Carousel";
+import Footer from "./Component/Footer";
+import Form from "./Component/Form";
 import Header from "./Component/Header";
 import InfoCard from "./Component/InfoCard";
 import MockupView from "./Component/MockupView";
-import Form from "./Component/Form";
-import { useState } from "react";
-import Footer from "./Component/Footer";
 
 export default function Home() {
   let data = [
@@ -88,6 +89,39 @@ export default function Home() {
     },
     {
       image: "7.png",
+    },
+  ];
+
+  const dataCarousel = [
+    {
+      id: 1,
+      image: "/Image/Carousel/viva.svg",
+      title: "Viva",
+    },
+    {
+      id: 2,
+      image: "/Image/Carousel/republika.svg",
+      title: "Republika",
+    },
+    {
+      id: 3,
+      image: "/Image/Carousel/idntimes.svg",
+      title: "IDN Times",
+    },
+    {
+      id: 4,
+      image: "/Image/Carousel/kompas.svg",
+      title: "Kompas",
+    },
+    {
+      id: 5,
+      image: "/Image/Carousel/detik.svg",
+      title: "Detik.com",
+    },
+    {
+      id: 6,
+      image: "/Image/Carousel/suara.webp",
+      title: "Suara.com",
     },
   ];
 
@@ -181,7 +215,15 @@ export default function Home() {
           <InfoCard icon="/Icon/logo.png" title="title" desc="Description" />
         </div>
       </div>
-
+      {/* carousel */}
+      <Carousel
+        data={dataCarousel}
+        className="animate-[fadeInBoth_0.7s_cubic-bezier(0.26,0.23,0.2,1)_both] opacity-0"
+        style={{
+          animationRange: "entry_80%_cover_100%",
+          animationTimeline: "view()",
+        }}
+      />
       {/* feature */}
       <div className="flex flex-col gap-[9.06rem] w-310 max-w-[90lvw]">
         {data.map((val, i) => {
