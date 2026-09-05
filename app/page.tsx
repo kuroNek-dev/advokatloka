@@ -160,7 +160,7 @@ export default function Home() {
               </h1>
             </div>
             <p className="text-center xl:text-left text-[min(5lvw,2rem)] md:text-[2rem] tracking-m2 font-normal leading-[140%] animate-[fadeIn_0.7s_cubic-bezier(0.26,0.23,0.2,1)_forwards] [animation-delay:900ms] opacity-0">
-              Bukan sekadar aplikasi, Sebuah ekosistem keadilan dalam satu
+              Bukan sekadar aplikasi, tapi sebuah ekosistem keadilan dalam satu
               genggaman.
             </p>
             {/* download button */}
@@ -216,14 +216,17 @@ export default function Home() {
         </div>
       </div>
       {/* carousel */}
-      <Carousel
-        data={dataCarousel}
-        className="animate-[fadeInBoth_0.7s_cubic-bezier(0.26,0.23,0.2,1)_both] opacity-0"
-        style={{
-          animationRange: "entry_80%_cover_100%",
-          animationTimeline: "view()",
-        }}
-      />
+      {/* CAROUSEL Hidden Mobile */}
+      <div className="hidden md:flex">
+        <Carousel
+          data={dataCarousel}
+          className="animate-[fadeInBoth_0.7s_cubic-bezier(0.26,0.23,0.2,1)_both] opacity-0"
+          style={{
+            animationRange: "entry_80%_cover_100%",
+            animationTimeline: "view()",
+          }}
+        />
+      </div>
       {/* feature */}
       <div className="flex flex-col gap-[9.06rem] w-310 max-w-[90lvw]">
         {data.map((val, i) => {
