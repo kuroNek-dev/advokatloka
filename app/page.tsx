@@ -148,7 +148,7 @@ export default function Home() {
                 blurDataURL="/Icon/book.svg"
               />
               <p className="text-white text-[min(4lvw,1.125rem)] md:text-[1.125rem] font-semibold tracking-m4">
-                Konsultan Hukum No. 1
+                PT Inovasi Digital Advokat
               </p>
             </div>
             <div className="flex flex-col items-center xl:items-start">

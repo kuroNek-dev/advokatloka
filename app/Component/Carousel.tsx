@@ -84,14 +84,14 @@ export default function LogoCarousel({
         {infiniteData.map((item, index) => (
           <div
             key={`${item.id}-${index}`}
-            className="flex-shrink-0 w-48 h-24 flex items-center justify-center md:grayscale md:hover:grayscale-0 transition opacity-70 hover:opacity-100"
+            className={`flex-shrink-0 ${item.id === 1 && "w-32"} ${item.id === 2 && "w-55"} ${item.id === 3 && "w-50"} ${item.id === 4 && "w-44"} ${item.id === 5 && "w-46"} ${item.id === 6 && "w-56"} flex items-center justify-center md:grayscale md:hover:grayscale-0 transition opacity-70 hover:opacity-100`}
           >
             <Image
               src={item.image}
               alt={item.title || `slide-${item.id}`}
-              width={200}
+              width={100}
               height={100}
-              className="object-contain max-h-20 h-auto w-full"
+              className="object-cover max-h-20 h-auto w-full"
             />
           </div>
         ))}
