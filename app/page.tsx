@@ -217,7 +217,7 @@ export default function Home() {
       </div>
       {/* carousel */}
       {/* CAROUSEL Hidden Mobile */}
-      <div className="hidden md:flex">
+      <div className="hidden">
         <Carousel
           data={dataCarousel}
           className="animate-[fadeInBoth_0.7s_cubic-bezier(0.26,0.23,0.2,1)_both] opacity-0"
