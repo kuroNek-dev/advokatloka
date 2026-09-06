@@ -1,6 +1,7 @@
 "use client";
+
 import Image from "next/image";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 
 interface LogoItem {
   id: number;
@@ -16,17 +17,46 @@ interface LogoCarouselProps {
 
 export default function LogoCarousel({
   data,
-  className,
+  className = "",
   style,
 }: LogoCarouselProps) {
   const scrollRef = useRef<HTMLDivElement>(null);
 
-  const scroll = (direction: "left" | "right") => {
-    if (!scrollRef.current) return;
-    const { scrollLeft, clientWidth } = scrollRef.current;
+  const infiniteData = [...data, ...data, ...data];
 
-    const offset = direction === "left" ? -clientWidth / 2 : clientWidth / 2;
-    scrollRef.current.scrollBy({ left: offset, behavior: "smooth" });
+  useEffect(() => {
+    const container = scrollRef.current;
+    if (!container || data.length === 0) return;
+
+    const oneSetWidth = container.scrollWidth / 3;
+    container.scrollLeft = oneSetWidth;
+  }, [data]);
+
+  const handleScroll = () => {
+    requestAnimationFrame(() => {
+      const container = scrollRef.current;
+      if (!container) return;
+
+      const oneSetWidth = container.scrollWidth / 3;
+
+      if (container.scrollLeft <= 20) {
+        container.scrollLeft += oneSetWidth;
+      } else if (container.scrollLeft >= oneSetWidth * 2 - 20) {
+        container.scrollLeft -= oneSetWidth;
+      }
+    });
+  };
+
+  const scroll = (direction: "left" | "right") => {
+    const container = scrollRef.current;
+    if (!container) return;
+
+    const offset = direction === "left" ? -300 : 300;
+
+    container.scrollBy({
+      left: offset,
+      behavior: "smooth",
+    });
   };
 
   return (
@@ -36,26 +66,32 @@ export default function LogoCarousel({
     >
       <button
         onClick={() => scroll("left")}
-        className="absolute left-2 md:left-0 top-1/2 -translate-y-1/2 z-10 p-2 rounded-full text-gray-700 hover:bg-slate-400/40  transition"
+        className="absolute left-2 md:left-0 top-1/2 -translate-y-1/2 z-10 p-2 rounded-full bg-white/80 shadow-md text-gray-700 hover:bg-white transition"
+        aria-label="Scroll left"
       >
         ‹
       </button>
+
       <div
         ref={scrollRef}
-        className="flex items-center gap-8 overflow-x-auto scroll-smooth no-scrollbar py-4 px-2"
-        style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+        onScroll={handleScroll}
+        className="flex items-center gap-8 overflow-x-auto no-scrollbar py-4 px-2 scrollbar-none"
+        style={{
+          scrollbarWidth: "none",
+          msOverflowStyle: "none",
+        }}
       >
-        {data.map((item) => (
+        {infiniteData.map((item, index) => (
           <div
-            key={item.id}
-            className="flex-shrink-0 w-50 h-30 flex items-center justify-center grayscale hover:grayscale-0 transition opacity-70 hover:opacity-100"
+            key={`${item.id}-${index}`}
+            className={`flex-shrink-0 ${item.id === 1 && "w-32"} ${item.id === 2 && "w-55"} ${item.id === 3 && "w-50"} ${item.id === 4 && "w-44"} ${item.id === 5 && "w-46"} ${item.id === 6 && "w-56"} flex items-center justify-center md:grayscale md:hover:grayscale-0 transition opacity-70 hover:opacity-100`}
           >
             <Image
               src={item.image}
-              alt={item.title || `slide` + item.id}
-              width={240}
-              height={120}
-              className="object-contain max-h-21 h-auto w-full"
+              alt={item.title || `slide-${item.id}`}
+              width={100}
+              height={100}
+              className="object-cover max-h-20 h-auto w-full"
             />
           </div>
         ))}
@@ -63,7 +99,8 @@ export default function LogoCarousel({
 
       <button
         onClick={() => scroll("right")}
-        className="absolute right-2 md:right-0 top-1/2 -translate-y-1/2 z-10 p-2 rounded-full text-gray-700 hover:bg-slate-400/40 transition"
+        className="absolute right-2 md:right-0 top-1/2 -translate-y-1/2 z-10 p-2 rounded-full bg-white/80 shadow-md text-gray-700 hover:bg-white transition"
+        aria-label="Scroll right"
       >
         ›
       </button>
