@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useState } from "react";
 import Carousel from "./Component/Carousel";
+import Commented from "./Component/Comment";
 import Footer from "./Component/Footer";
 import Form from "./Component/Form";
 import Header from "./Component/Header";
@@ -15,81 +16,113 @@ export default function Home() {
       title: "Konsultasi Advokat, Notaris & Mediator",
       desc: "Bicara langsung dengan ahlinya. Terhubung dengan advokat, notaris, atau mediator terverifikasi untuk menyelesaikan masalah hukum Anda. Setiap sesi dinilai dua arah sehingga mutu dan kepercayaan selalu terjaga.",
       image: "/Image/Mockup/phone_mockup_1.png",
+      height: 34.3125,
+      width: 26.75,
     },
     {
       title: "Konsultasi Kilat — Rp25.000 / 5 menit",
       desc: "Jawaban cepat, biaya ringan. Butuh jawaban singkat tanpa janji temu panjang? Terhubung dengan praktisi hukum hanya Rp25.000 untuk 5 menit, hemat untuk pertanyaan yang mendesak tapi sederhana.",
       image: "/Image/Mockup/phone_mockup_2.png",
+      height: 34.3125,
+      width: 26.75,
     },
     {
       title: "SOS",
       desc: "Bantuan cepat saat genting. Tombol darurat untuk situasi hukum mendesak. Permintaan Anda langsung diteruskan ke advokat jaga dan direspons secepat mungkin sesuai jadwal ketersediaan.",
       image: "/Image/Mockup/phone_mockup_3.png",
+      height: 34.3125,
+      width: 26.75,
     },
     {
       title: "Tanya AI",
       desc: "Asisten hukum dalam genggaman. Ajukan pertanyaan hukum sehari-hari dan dapatkan penjelasan awal yang mudah dipahami secara instan. Langkah pertama yang pas sebelum berkonsultasi dengan ahli.",
-      image: "/Image/Mockup/phone_mockup_4.png",
+      image: "/Image/Mockup/phone_mockup_aiask.png",
+      height: 34.3125,
+      width: 26.75,
     },
     {
       title: "Review Dokumen Sederhana",
       desc: "Periksa sebelum menandatangani. Unggah dokumen hukum dasar Anda untuk ditinjau, agar Anda paham isinya dan terhindar dari klausul yang merugikan.",
       image: "/Image/Mockup/phone_mockup_5.png",
+      height: 34.3125,
+      width: 26.75,
     },
     {
       title: "Template Dokumen",
       desc: "Dokumen hukum siap pakai. Beragam template dokumen hukum dasar yang tinggal Anda sesuaikan untuk menghemat waktu dan biaya membuat dari nol.",
       image: "/Image/Mockup/phone_mockup_6.png",
+      height: 34.3125,
+      width: 26.75,
     },
     {
       title: "Mini Kursus",
       desc: "Belajar hukum, langkah demi langkah. Kelas singkat berbahasa sederhana tentang hak dan prosedur hukum sehari-hari. Tingkatkan literasi hukum Anda kapan saja, di mana saja.",
       image: "/Image/Mockup/phone_mockup_7.png",
+      height: 34.3125,
+      width: 26.75,
     },
     {
       title: "Kalkulator Waris",
       desc: "Hitung pembagian waris dengan tepat. Simulasi pembagian harta waris sesuai ketentuan hukum waris Islam (faraidh) secara otomatis untuk membantu keluarga memahami hak masing-masing dan mencegah sengketa.",
       image: "/Image/Mockup/phone_mockup_8.png",
+      height: 34.3125,
+      width: 26.75,
     },
     {
       title: "Kamus Hukum",
       desc: "Istilah hukum, dibuat sederhana. Cari arti istilah hukum yang rumit dalam bahasa yang mudah dimengerti supaya Anda tak lagi bingung membaca dokumen atau mengikuti proses hukum.",
       image: "/Image/Mockup/phone_mockup_9.png",
+      height: 34.3125,
+      width: 26.75,
     },
     {
       title: "Webinar",
       desc: "Belajar langsung dari praktisi. Sesi daring bersama advokat dan ahli hukum membahas topik-topik penting. Ikuti, bertanya, dan perluas pemahaman hukum Anda bersama komunitas.",
       image: "/Image/Mockup/phone_mockup_10.png",
+      height: 34.3125,
+      width: 26.75,
     },
     {
       title: "Pro Bono",
       desc: "Keadilan untuk yang membutuhkan. Kanal khusus yang mempertemukan warga kurang mampu dengan advokat yang siap mendampingi tanpa biaya, didukung penggalangan dana hukum yang transparan.",
       image: "/Image/Mockup/phone_mockup_11.png",
+      height: 34.3125,
+      width: 26.75,
     },
     {
       title: "Cek Legalitas",
       desc: "Pastikan keasliannya sebelum percaya. Verifikasi legalitas sebuah badan usaha, lembaga, atau alamat/tautan resmi dengan cepat untuk melindungi diri Anda dari penipuan dan pihak yang tidak sah.",
-      image: "/Image/Mockup/phone_mockup_12.png",
+      image: "/Image/Mockup/phone_mockup_checklegal.png",
+      height: 34.3125,
+      width: 26.75,
     },
     {
       title: "Urus Legalitas",
       desc: "Legalitas usaha, kami bantu urus. Layanan pembuatan dokumen legalitas usaha dibantu dari awal hingga tuntas, agar usaha Anda resmi dan terlindungi secara hukum.",
-      image: "/Image/Mockup/phone_mockup_13.png",
+      image: "/Image/Mockup/phone_mockup_uruslegalitas.png",
+      height: 34.3125,
+      width: 26.75,
     },
     {
       title: "Database Peraturan",
       desc: "Rujukan hukum resmi di satu tempat. Akses kumpulan peraturan perundang-undangan resmi dan terpercaya, supaya informasi hukum yang Anda gunakan selalu akurat dan sah.",
       image: "/Image/Mockup/phone_mockup_14.png",
+      height: 34.3125,
+      width: 26.75,
     },
     {
       title: "Berita Hukum",
       desc: "Tetap update soal hukum. Kabar dan perkembangan hukum terbaru yang dikemas ringkas dan mudah dipahami agar Anda tak ketinggalan hal yang memengaruhi hak Anda.",
       image: "/Image/Mockup/phone_mockup_15.png",
+      height: 34.3125,
+      width: 26.75,
     },
     {
       title: "FAQ",
       desc: "Pertanyaan Anda, terjawab. Kumpulan pertanyaan yang paling sering diajukan tentang layanan Advokatloka.",
       image: "/Image/Mockup/phone_mockup_16.png",
+      height: 34.3125,
+      width: 26.75,
     },
   ];
   let diliput = [
@@ -149,6 +182,90 @@ export default function Home() {
     },
   ];
 
+  const dataComment1 = [
+    {
+      name: "Budi Santoso",
+      image: "/Image/user.png",
+      comment:
+        "Terima kasih AdvokatLoka! Proses pencarian pendamping hukum jadi jauh lebih mudah dan transparan.",
+      score: 5,
+      profession: "Pengusaha",
+    },
+    {
+      name: "Siti Rahma",
+      image: "/Image/user.png",
+      comment:
+        "Sangat membantu sekali untuk konsultasi hukum cepat tanpa harus bingung cari ke mana.",
+      score: 4,
+      profession: "Karyawan Swasta",
+    },
+    {
+      name: "Ahmad Fauzi",
+      image: "/Image/user.png",
+      comment:
+        "Platformnya transparan dan fiturnya sangat memudahkan klien awam seperti saya.",
+      score: 5,
+      profession: "Wiraswasta",
+    },
+    {
+      name: "Dewi Lestari",
+      image: "/Image/user.png",
+      comment: "Respon pendamping hukumnya cepat dan profesional. Recommended!",
+      score: 4,
+      profession: "Ibu Rumah Tangga",
+    },
+    {
+      name: "Rian Pratama",
+      image: "/Image/user.png",
+      comment:
+        "Mantap! Sangat membantu menyelesaikan masalah hukum perusahaan saya.",
+      score: 5,
+      profession: "Direktur Startup",
+    },
+  ];
+
+  const dataComment2 = [
+    {
+      name: "Riko Saputra",
+      image: "/Image/user.png",
+      comment:
+        "Awalnya ragu konsultasi online, ternyata pelayanannya profesional dan sangat solutif.",
+      score: 5,
+      profession: "Freelancer",
+    },
+    {
+      name: "Linda Kusuma",
+      image: "/Image/user.png",
+      comment:
+        "Fitur pencariannya gampang dipakai. Sangat ngebantu buat yang butuh hukum darurat.",
+      score: 5,
+      profession: "Content Creator",
+    },
+    {
+      name: "Dimas Anggara",
+      image: "/Image/user.png",
+      comment:
+        "Biaya dan prosesnya transparan dari awal. Gak ada biaya tersembunyi, mantap!",
+      score: 4,
+      profession: "Pegawai Negeri",
+    },
+    {
+      name: "Sarah Wijaya",
+      image: "/Image/user.png",
+      comment:
+        "Konsultasinya ramah banget dan penjelasannya mudah dipahami orang awam.",
+      score: 5,
+      profession: "Dokter Muda",
+    },
+    {
+      name: "Eko Prasetyo",
+      image: "/Image/user.png",
+      comment:
+        "Pelayanan hukum terbaik yang pernah saya coba secara online. Sukses terus!",
+      score: 4,
+      profession: "Manager Operasional",
+    },
+  ];
   const [name, setName] = useState<string>("");
   const [email, setEmail] = useState<string>("");
   const [message, setMessage] = useState<string>("");
@@ -338,6 +455,12 @@ export default function Home() {
           />
         </div>
       </div>
+      <div className="w-full items-center flex flex-col gap-20 md:gap-30 py-20">
+        <Commented
+          title="Dipercaya Oleh Profesional Hukum"
+          data={dataComment1}
+        />
+      </div>
       {/* carousel */}
       {/* CAROUSEL Hidden Mobile */}
       <div className="hidden">
@@ -360,6 +483,7 @@ export default function Home() {
               type={i % 2 == 0 ? 0 : 1}
               desc={val.desc}
               key={i}
+              onSize={{ width: val.width, height: val.height }}
             />
           );
         })}
@@ -431,6 +555,7 @@ export default function Home() {
 
         {/* logo slider */}
         <div className="w-full items-center flex flex-col gap-20 md:gap-30 py-20">
+          <Commented title="Yang mempercayai kami" data={dataComment2} />
           {/* diliput */}
           <div className="w-310 max-w-[90lvw] flex flex-col gap-12 md:px-40 lg:px-30 py-4 items-center">
             <h1

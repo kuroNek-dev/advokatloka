@@ -6,9 +6,13 @@ interface data {
   desc: string;
   type: 0 | 1;
   key?: number;
+  onSize: {
+    width: number;
+    height: number;
+  };
 }
 
-const MockupView = ({ image, title, desc, type }: data) => {
+const MockupView = ({ image, title, desc, type, onSize }: data) => {
   return (
     <div
       className={`px-4 md:px-40 lg:px-30 lg:gap-16 flex items-center flex-col ${type ? "lg:flex-row-reverse" : "lg:flex-row"}`}
@@ -17,8 +21,8 @@ const MockupView = ({ image, title, desc, type }: data) => {
         <Image
           alt="Phone Mockup"
           src={image}
-          width={26.75 * 16}
-          height={34.3125 * 16}
+          width={onSize.width * 16}
+          height={onSize.height * 16}
           loading="eager"
         />
       </div>
