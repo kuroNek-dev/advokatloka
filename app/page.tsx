@@ -9,6 +9,7 @@ import Form from "./Component/Form";
 import Header from "./Component/Header";
 import InfoCard from "./Component/InfoCard";
 import MockupView from "./Component/MockupView";
+import Partner from "./Component/Partner";
 
 export default function Home() {
   let data = [
@@ -266,6 +267,84 @@ export default function Home() {
       profession: "Manager Operasional",
     },
   ];
+
+  const dataPartner = [
+    {
+      id: 1,
+      name: "Himpunan Mahasiswa Upi",
+      image: "",
+    },
+    {
+      id: 2,
+      name: "Himpunan Mahasiswa Upi",
+      image: "",
+    },
+    {
+      id: 3,
+      name: "Himpunan Mahasiswa Upi",
+      image: "",
+    },
+    {
+      id: 4,
+      name: "Himpunan Mahasiswa Upi",
+      image: "",
+    },
+    {
+      id: 5,
+      name: "Himpunan Mahasiswa Upi",
+      image: "",
+    },
+    {
+      id: 6,
+      name: "Himpunan Mahasiswa Upi",
+      image: "",
+    },
+    {
+      id: 5,
+      name: "Himpunan Mahasiswa Upi",
+      image: "",
+    },
+    {
+      id: 7,
+      name: "Himpunan Mahasiswa Upi",
+      image: "",
+    },
+    {
+      id: 8,
+      name: "Himpunan Mahasiswa Upi",
+      image: "",
+    },
+    {
+      id: 9,
+      name: "Himpunan Mahasiswa Upi",
+      image: "",
+    },
+    {
+      id: 10,
+      name: "Himpunan Mahasiswa Upi",
+      image: "",
+    },
+    {
+      id: 11,
+      name: "Himpunan Mahasiswa Upi",
+      image: "",
+    },
+    {
+      id: 12,
+      name: "Himpunan Mahasiswa Upi",
+      image: "",
+    },
+    {
+      id: 13,
+      name: "Himpunan Mahasiswa Upi",
+      image: "",
+    },
+    {
+      id: 14,
+      name: "Himpunan Mahasiswa Upi",
+      image: "",
+    },
+  ];
   const [name, setName] = useState<string>("");
   const [email, setEmail] = useState<string>("");
   const [message, setMessage] = useState<string>("");
@@ -488,7 +567,15 @@ export default function Home() {
           );
         })}
       </div>
-
+      <div className="w-full max-w-[90rem] flex flex-col gap-[128px] px-[120px]">
+        <Partner
+          data={dataPartner}
+          style={{
+            animationTimeline: "view()",
+            animationRange: "entry 80% cover 40%",
+          }}
+        />
+      </div>
       <div className="w-full">
         {/* form */}
         <div
