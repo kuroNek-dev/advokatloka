@@ -6,15 +6,21 @@ interface CommentedProps {
   title?: string;
   data?: any[];
   index?: number;
+  divRef?: React.RefObject<HTMLDivElement | null>;
 }
 
-export default function Commented({ title, data, index }: CommentedProps) {
+export default function Commented({
+  title,
+  data,
+  index,
+  divRef,
+}: CommentedProps) {
   const arr = Array.from({ length: 5 }, (_, i) => i + 1);
 
   return (
     <>
       {/* diliput */}
-      <div className="w-310 max-w-[90lvw] h-full flex flex-col gap-12 md:px-40 lg:px-30 py-4 items-center">
+      <div className="w-310 max-w-[90lvw] h-full flex flex-col gap-12 md:px-10 lg:px-20 py-4 items-center">
         <h1
           className="text-[min(8lvw,3.25rem)] md:text-[3.25rem] text-dark-green font-bold tracking-m8 text-center
             animate-[fadeInBoth_0.7s_cubic-bezier(0.26,0.23,0.2,1)_both] opacity-0"
@@ -34,7 +40,7 @@ export default function Commented({ title, data, index }: CommentedProps) {
             animationTimeline: "view()",
           }}
         >
-          <div className="w-max h-[50vh] overflow-hidden">
+          <div className="w-max overflow-hidden">
             {/* loop container */}
             <div className="flex w-max gap-8 animate-[newInfiniteLoop_20s_linear_infinite]">
               {Array.from({ length: (data?.length || 0) * 2 }).map((_, i) => {
