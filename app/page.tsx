@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import Carousel from "./Component/Carousel";
 import Commented from "./Component/Comment";
 import Footer from "./Component/Footer";
@@ -348,6 +348,25 @@ export default function Home() {
   const [name, setName] = useState<string>("");
   const [email, setEmail] = useState<string>("");
   const [message, setMessage] = useState<string>("");
+  const nextSectionRef = useRef<HTMLDivElement>(null);
+  const mitraSectionRef = useRef<HTMLDivElement>(null);
+
+  console.log(nextSectionRef.current);
+  console.log(mitraSectionRef.current);
+
+  const handleScrollToNext = () => {
+    nextSectionRef.current?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  };
+
+  const handleScrollToMitra = () => {
+    mitraSectionRef.current?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  };
 
   return (
     <div className="flex flex-col gap-25 md:gap-36.25 items-center">
@@ -574,6 +593,10 @@ export default function Home() {
             animationTimeline: "view()",
             animationRange: "entry 80% cover 40%",
           }}
+          onClick={handleScrollToNext}
+          onMitra={handleScrollToMitra}
+          divRef={nextSectionRef}
+          mitraRef={mitraSectionRef}
         />
       </div>
       <div className="w-full">
